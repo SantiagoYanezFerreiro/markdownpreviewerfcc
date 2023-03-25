@@ -17,6 +17,7 @@ function App() {
   }
   \`\`\`
 
+
   - First item
   - Second item
   - Third item
@@ -25,9 +26,12 @@ function App() {
 
   ![alt text](image.jpg)
 
-
   **bold text**
   `);
+
+  marked.setOptions({
+    breaks: true,
+  });
   return (
     <div className="App">
       <textarea
@@ -36,7 +40,12 @@ function App() {
           setText(event.target.value);
         }}
       ></textarea>
-      <div id="preview">{marked.parse(text)}</div>
+      <div
+        id="preview"
+        dangerouslySetInnerHTML={{
+          __html: marked(text),
+        }}
+      ></div>
       <div>aaa</div>
     </div>
   );
