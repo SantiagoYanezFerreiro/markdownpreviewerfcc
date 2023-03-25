@@ -46,7 +46,6 @@ function App() {
           __html: marked(text),
         }}
       ></div>
-      <div>aaa</div>
     </div>
   );
 }
